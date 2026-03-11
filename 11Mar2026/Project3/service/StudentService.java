@@ -1,5 +1,7 @@
 package com.example.Project3.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.Project3.dto.request.StudentRequest;
@@ -15,6 +17,7 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
     
+
     public StudentResponse processStudent(StudentRequest request)
     {
         int total=request.getMarks().stream().mapToInt(Integer::intValue).sum();
@@ -25,6 +28,7 @@ public class StudentService {
         Student student=new Student();
         student.setName(request.getName());
         student.setRollno(request.getRollno());
+        student.setTotal(total);
         student.setPercentage(percentage);
         student.setResults(results);
 
@@ -32,4 +36,17 @@ public class StudentService {
 
         return new StudentResponse(request.getName(), request.getRollno(), total, percentage, results);
     }
-}
+        public List<StudentResponse> getAllStudentsResults()
+        {
+            return studentRepository.findAll()
+           .stream()
+           .map(student->new StudentResponse(
+                student.getName(), 
+                student.getRollno(), 
+                student.getTotal(), 
+                student.getPercentage(), 
+                student.getResults())
+           ).toList();
+        }
+    }
+

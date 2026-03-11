@@ -14,6 +14,16 @@ public class Student {
     private int rollno;
     private double percentage;
     private String results;
+    private int total;
+
+    public int getTotal() {
+        return total;
+    }
+    public void setTotal(int total) {
+        this.total = total;
+    }
+    
+    
 
     public Long getId() {
         return id;

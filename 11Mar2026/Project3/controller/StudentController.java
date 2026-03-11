@@ -1,5 +1,8 @@
 package com.example.Project3.controller;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +27,12 @@ public class StudentController {
         StudentResponse response=studentService.processStudent(request);
         return new ApiResponse("Successfully processed", response);
 
+    }
+
+    @GetMapping("/processes")
+    public List<StudentResponse> getAllStudentsResults()
+    {
+        return studentService.getAllStudentsResults();
     }
     
    
