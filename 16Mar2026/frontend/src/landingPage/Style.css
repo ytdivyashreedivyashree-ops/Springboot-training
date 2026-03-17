@@ -1,0 +1,93 @@
+body {
+    background: lightgray;
+    font-family: Arial;
+}
+
+.main {
+    width: 1100px;
+    margin: auto;
+    display: flex;
+    background: #f6f2ea;
+}
+
+.left {
+    width: 65%;
+    padding: 40px;
+}
+
+.right {
+    width: 35%;
+    background: #1e6b63;
+    padding: 30px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a {
+    margin: 10px;
+    font-size: 14px;
+}
+
+.welcome {
+    margin-top: 60px;
+}
+
+.welcome h1 {
+    font-size: 50px;
+}
+
+.welcome p {
+    margin-top: 20px;
+    color: gray;
+}
+
+.btn1 {
+    margin-top: 20px;
+    background: orange;
+    padding: 12px 20px;
+    border: none;
+    color: white;
+}
+
+.btn2 {
+    margin-left: 15px;
+    border: none;
+    background: none;
+}
+
+.brands {
+    margin-top: 100px;
+    color: gray;
+}
+
+.login {
+    text-align: right;
+}
+
+.login button {
+    background: white;
+    border: none;
+    padding: 10px;
+}
+
+.image {
+    margin-top: 50px;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.badge {
+    position: absolute;
+    background: black;
+    color: white;
+    padding: 10px;
+    top: 10px;
+    left: 10px;
+}
